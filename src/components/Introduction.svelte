@@ -8,8 +8,8 @@
 <div class="hero">
 	<div class="hero-content">
 		<div class="flex flex-col gap-6">
-			<h1 class="text-5xl font-bold">'Adli Ihsan Hariadi</h1>
-			<h2 class="text-3xl font-thin">Backend Engineer</h2>
+			<h1 class="text-5xl font-bold text-primary">'Adli Ihsan Hariadi</h1>
+			<h2 class="text-3xl font-thin text-secondary">Backend Engineer</h2>
 			<p>
 				I'm a passionate backend engineer with over {yearOfExperience} years of experience in software
 				development. I've been deeply involved in crafting efficient and robust backend solutions for

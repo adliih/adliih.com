@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Introduction from '$components/Intoduction.svelte';
+	import Introduction from '$components/Introduction.svelte';
 	import WorkExperienceComponent from '$components/WorkExperience.svelte';
 	import type { WorkExperience } from '$lib/types';
 
