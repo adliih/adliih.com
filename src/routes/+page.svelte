@@ -1,2 +1,7 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import Introduction from '$components/Intoduction.svelte';
+</script>
+
+<div class="flex flex-col gap-4">
+	<Introduction />
+</div>
