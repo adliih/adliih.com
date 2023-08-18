@@ -31,7 +31,7 @@
 	];
 </script>
 
-<div class="flex flex-col items-center justify-center h-full gap-16 bg-secondary">
+<div class="flex flex-col items-center justify-center h-full gap-16">
 	<div class="avatar">
 		<div class="w-24 rounded">
 			<img src="/placeholder.svg" alt="Profile Picture" class="w-48 h-48 mb-4 rounded-full" />
