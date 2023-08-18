@@ -6,3 +6,11 @@ export interface WorkExperience {
 	stacks: string[];
 	highlights: string[];
 }
+
+export interface Education {
+	title: string;
+	institution: string;
+	start: string;
+	end: string;
+	items: string[];
+}

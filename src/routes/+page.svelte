@@ -1,7 +1,8 @@
 <script lang="ts">
+	import EducationComponent from '$components/Education.svelte';
 	import Introduction from '$components/Introduction.svelte';
 	import WorkExperienceComponent from '$components/WorkExperience.svelte';
-	import type { WorkExperience } from '$lib/types';
+	import type { WorkExperience, Education } from '$lib/types';
 
 	const experiences: WorkExperience[] = [
 		{
@@ -53,10 +54,22 @@
 			]
 		}
 	];
+
+	const educations: Education[] = [
+		{
+			title: 'Bachelor of Informatics Engineering',
+			institution: 'Telkom University, Bandung, Indonesia',
+			start: 'Aug 2013',
+			end: 'Jan 2017',
+			items: ['GPA: 3.78 / 4']
+		}
+	];
 </script>
 
 <div class="flex flex-col gap-4">
 	<Introduction />
 	<div class="divider" />
 	<WorkExperienceComponent {experiences} />
+	<div class="divider" />
+	<EducationComponent {educations} />
 </div>
