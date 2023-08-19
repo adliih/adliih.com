@@ -3,12 +3,13 @@
 	import Sidebar from '$components/Sidebar.svelte';
 </script>
 
-<div class="flex min-h-screen gap-4">
-	<div class="sticky top-0 w-1/2 h-screen p-4 flex-0 md:w-1/4">
+<div class="flex flex-col lg:flex-row">
+	<div class="p-4 lg:h-screen lg:top-0 lg:left-0 flex-0 lg:w-72 lg:fixed">
 		<Sidebar />
 	</div>
-	<div class="py-4 -mx-4 divider divider-horizontal" />
-	<div class="flex-1 px-4 py-12 overflow-y-auto">
+	<div class="w-0 lg:flex-0 lg:w-72" />
+	<div class="lg:ml-0 lg:py-4 divider lg:divider-horizontal" />
+	<div class="px-4 py-4 overflow-y-auto lg:py-12 lg:flex-1">
 		<slot />
 	</div>
 </div>
