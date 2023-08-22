@@ -11,11 +11,11 @@
 		{
 			href: '/',
 			title: 'About'
-		},
-		{
-			href: '/portfolio',
-			title: 'Portfolio'
 		}
+		// {
+		// 	href: '/portfolio',
+		// 	title: 'Portfolio'
+		// }
 	];
 
 	const socials = [
