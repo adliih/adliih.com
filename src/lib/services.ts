@@ -3,27 +3,25 @@ import type { Education, Project, WorkExperience } from './types';
 export async function getExperiences(): Promise<WorkExperience[]> {
 	return [
 		{
-			jobTitle: 'Software Development Engineer II',
-			company: 'Lummo',
-			startWork: 'Sep 2022',
-			// endWork: 'Mar 2023',
+			jobTitle: 'Back-end Engineer',
+			company: 'Trilogy',
+			startWork: 'Jun 2023',
+			endWork: 'Aug 2023',
 			highlights: [
-				'Maintain and develop authentication and authorization functionality',
-				'Sync old x new user data schema',
-				'Develop translation on email builder',
-				'Research and Develop Automation Chat Response',
-				'Integration with 3rd Automation Platform (Make / Integromat)'
+				'Improve S3 query of intercepted external learning apps request-response',
+				'Developing Duolingo integrations',
+				'Developing antipattern detection of ReadTheory',
+				'Add force update functionality on chrome extensions'
 			],
 			stacks: [
 				'TypeScript',
-				'Google Cloud Platform (GCP)',
-				'Google Kubernetes Engine (GKE)',
+				'Amazon Web Services (AWS)',
+				'GraphQL',
 				'PostgreSQL',
 				'Node.js',
-				'Pubsub',
-				'GraphQL',
 				'Git',
-				'ArgoCD'
+				'AWS CDK',
+				'AWS Serverless'
 			]
 		},
 		{
@@ -49,6 +47,52 @@ export async function getExperiences(): Promise<WorkExperience[]> {
 				'Git',
 				'ArgoCD'
 			]
+		},
+		{
+			jobTitle: 'Senior Backend Engineer',
+			company: 'Mamikos',
+			startWork: 'Apr 2020',
+			endWork: 'Jul 2022',
+			highlights: [
+				'Lead research and development Kissflow API integration with Mamikos System',
+				'Lead project initialization for managing controlled property in Mamikos',
+				'Integrate Apple Sign In with mamikos login system',
+				'Upgrade consultant system for sub district level mapping',
+				'Improve consultant chat system that backed by Sendbird',
+				'Develop API for upload chat media that stored in AWS S3',
+				'Develop Landmark / Point of Interest near a listing',
+				'Develop mock Infobip server for development flow',
+				'Develop User-to-user report API',
+				'Develop and maintain discoverability of Mamikos listing'
+			],
+			stacks: ['JavaScript', 'Gitlab', 'REST APIs', 'PHP', 'Laravel', 'MySQL', 'Ansible', 'Git']
+		},
+		{
+			jobTitle: 'Xperience Backend Engineer',
+			company: 'Traveloka',
+			startWork: 'Sep 2017',
+			endWork: 'Mar 2020',
+			highlights: [
+				'Develop and maintain system stability of Movies product',
+				'Integrate Traveloka Movies system with 3rd Party, e.g Cinemaxx, CGV, Flix, Platinum, Major (Thailand)',
+				'Migrate Cinema Services to Auto Scaling Group architecture',
+				'Multi repo migration of Cinema backend codebase',
+				'Create a slack bot to help service deployment',
+				'Acting lead of movies backend engineer',
+				'Develop and maintain discoverability of Xperience Product'
+			],
+			stacks: [
+				'Microservices',
+				'NoSQL',
+				'MongoDB',
+				'REST APIs',
+				'Java',
+				'Amazon Web Services (AWS)',
+				'Git',
+				'Ansible',
+				'Jenkins',
+				'MySQL'
+			]
 		}
 	];
 }
@@ -67,6 +111,19 @@ export async function getEducations(): Promise<Education[]> {
 
 export async function getProjects(): Promise<Project[]> {
 	return [
+		{
+			title: 'Portfolio Website',
+			start: 'Aug 2023',
+			end: 'Aug 2023',
+			links: [
+				{
+					label: 'Live',
+					url: 'https://adliih.com/'
+				}
+			],
+			highlights: ['Fullstack project for personal portfolio website'],
+			stacks: ['HTML', 'CSS', 'Typescript', 'Tailwindcss', 'DaisyUI', 'Svelte', 'Cloudflare Pages']
+		},
 		{
 			title: 'MarineDB',
 			start: 'May 2023',
