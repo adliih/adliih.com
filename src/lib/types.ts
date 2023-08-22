@@ -14,3 +14,12 @@ export interface Education {
 	end: string;
 	items: string[];
 }
+
+export interface Project {
+	title: string;
+	links: { label: string; url: string }[];
+	start: string;
+	end: string;
+	highlights: string[];
+	stacks: string[];
+}

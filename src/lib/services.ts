@@ -1,4 +1,4 @@
-import type { Education, WorkExperience } from './types';
+import type { Education, Project, WorkExperience } from './types';
 
 export async function getExperiences(): Promise<WorkExperience[]> {
 	return [
@@ -61,6 +61,41 @@ export async function getEducations(): Promise<Education[]> {
 			start: 'Aug 2013',
 			end: 'Jan 2017',
 			items: ['GPA: 3.78 / 4']
+		}
+	];
+}
+
+export async function getProjects(): Promise<Project[]> {
+	return [
+		{
+			title: 'MarineDB',
+			start: 'May 2023',
+			end: 'Jul 2023',
+			links: [
+				{
+					label: 'Demo',
+					url: 'https://marinedb.up.railway.app/'
+				}
+			],
+			highlights: [
+				'Site to view the list, detail of registered chemical compounds, download compound structures'
+			],
+			stacks: ['HTML', 'CSS', 'PHP', 'Laravel', 'JavaScript', 'Inertia.js', 'React', 'MySQL']
+		},
+		{
+			title: 'Tel-U Event Information System',
+			start: 'Dec 2016',
+			end: 'Dec 2017',
+			links: [
+				{
+					label: 'Web URL',
+					url: 'https://eis.telkomuniversity.ac.id/'
+				}
+			],
+			highlights: [
+				'Event management, event reporting, event attendance confirmation that integrated with Google Calendar'
+			],
+			stacks: ['HTML', 'CSS', 'PHP', 'CodeIgniter', 'JavaScript', 'jQuery', 'MySQL']
 		}
 	];
 }
