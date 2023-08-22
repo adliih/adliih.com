@@ -3,10 +3,13 @@
 	import Icon from 'fa-svelte';
 	import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 	import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
+	import { page } from '$app/stores';
+
+	$: pathname = $page.url.pathname;
 
 	const pages = [
 		{
-			href: '/about',
+			href: '/',
 			title: 'About'
 		},
 		{
@@ -42,7 +45,11 @@
 		<ul class="menu menu-vertical menu-lg rounded-box">
 			{#each pages as page}
 				<li>
-					<a href={page.href} class="block py-2 text-center hover:text-accent">{page.title}</a>
+					<a
+						href={page.href}
+						class="block py-2 text-center hover:text-accent"
+						class:active-menu={pathname === page.href}>{page.title}</a
+					>
 				</li>
 			{/each}
 		</ul>
@@ -58,3 +65,9 @@
 		{/each}
 	</ul>
 </div>
+
+<style>
+	.active-menu {
+		@apply bg-primary;
+	}
+</style>
