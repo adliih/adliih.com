@@ -11,12 +11,12 @@
 		{#each experiences as experience}
 			<div class="flex flex-col gap-4">
 				<div class="flex flex-col justify-between lg:items-center lg:flex-row">
-					<h3 class="text-xl font-semibold text-secondary">{experience.jobTitle}</h3>
+					<h3 class="text-xl font-semibold lg:w-1/3 text-secondary">{experience.jobTitle}</h3>
 					<p class="text-gray-300">{experience.company}</p>
 					<p class="text-gray-300">
 						{experience.startWork} -
 						{#if experience.endWork}
-							{experience.startWork}
+							{experience.endWork}
 						{:else}
 							<span class="badge badge-accent">Current</span>
 						{/if}
