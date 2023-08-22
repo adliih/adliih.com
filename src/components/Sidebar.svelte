@@ -36,8 +36,8 @@
 
 <div class="flex flex-row items-center justify-center h-full gap-16 lg:flex-col">
 	<div class="avatar">
-		<div class="w-24 rounded lg:w-64">
-			<img src="/placeholder.svg" alt="Profile Picture" class="w-48 h-48 mb-4 rounded-full" />
+		<div class="w-24 mb-4 rounded-full lg:w-64">
+			<img src="/profile_picture.jpg" alt="" class="object-cover object-top" />
 		</div>
 	</div>
 
