@@ -9,7 +9,7 @@
 	<div class="flex flex-col gap-12">
 		{#each educations as education}
 			<div class="flex flex-col gap-4">
-				<div class="flex items-center justify-between">
+				<div class="flex flex-col justify-between lg:items-center lg:flex-row">
 					<h3 class="text-xl font-semibold text-secondary">{education.title}</h3>
 					<p class="text-gray-300">{education.institution}</p>
 					<p class="text-gray-300">

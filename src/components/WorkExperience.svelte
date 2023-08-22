@@ -10,7 +10,7 @@
 	<div class="flex flex-col gap-12">
 		{#each experiences as experience}
 			<div class="flex flex-col gap-4">
-				<div class="flex items-center justify-between">
+				<div class="flex flex-col justify-between lg:items-center lg:flex-row">
 					<h3 class="text-xl font-semibold text-secondary">{experience.jobTitle}</h3>
 					<p class="text-gray-300">{experience.company}</p>
 					<p class="text-gray-300">
