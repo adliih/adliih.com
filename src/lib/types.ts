@@ -1,3 +1,5 @@
+import type { StackUsageType } from '$lib/enums';
+
 export interface WorkExperience {
 	company: string;
 	jobTitle: string;
@@ -22,4 +24,11 @@ export interface Project {
 	end: string;
 	highlights: string[];
 	stacks: string[];
+}
+
+export interface StackStatistic {
+	stack: string;
+	type: StackUsageType;
+	start: Date;
+	end?: Date;
 }
