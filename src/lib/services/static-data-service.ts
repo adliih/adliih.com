@@ -1,4 +1,4 @@
-import type { Education, Project, WorkExperience } from './types';
+import type { Education, Project, WorkExperience } from '$lib/types';
 
 export async function getExperiences(): Promise<WorkExperience[]> {
 	return [
