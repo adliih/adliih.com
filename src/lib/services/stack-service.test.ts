@@ -104,6 +104,19 @@ describe('sortStackStatisticByDuration', () => {
 
 		const sortedStacks = sortStackStatisticByDuration(stacks);
 
-		expect(sortedStacks).toEqual([stacks[2], stacks[0], stacks[1]]);
+		expect(sortedStacks).toEqual([
+			{
+				...stacks[2],
+				durationInMillis: 47433600000
+			},
+			{
+				...stacks[0],
+				durationInMillis: 13046400000
+			},
+			{
+				...stacks[1],
+				durationInMillis: 10368000000
+			}
+		]);
 	});
 });
