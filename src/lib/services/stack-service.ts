@@ -1,4 +1,9 @@
-import type { Project, StackStatistic, WorkExperience } from '$lib/types';
+import type {
+	Project,
+	StackStatistic,
+	StackStatisticWithDuration,
+	WorkExperience
+} from '$lib/types';
 import { StackUsageType } from '$lib/enums';
 import { getStackUsageDurationInMillis, parseMonthYearToDateWithFirstDayOfMonth } from '$lib/utils';
 
@@ -40,12 +45,22 @@ function projectToStackStatistic(project: Project): StackStatistic[] {
 	}));
 }
 
-export function sortStackStatisticByDuration(stacks: StackStatistic[]): StackStatistic[] {
-	return stacks.slice().sort((a, b) => {
-		return (
-			getStackUsageDurationInMillis(b.start, b.end) - getStackUsageDurationInMillis(a.start, a.end)
-		);
-	});
+export function sortStackStatisticByDuration(
+	stacks: StackStatistic[]
+): StackStatisticWithDuration[] {
+	return stacks
+		.slice()
+		.map(toStackStatisticWithDuration)
+		.sort((a, b) => {
+			return b.durationInMillis - a.durationInMillis;
+		});
+}
+
+function toStackStatisticWithDuration(stack: StackStatistic): StackStatisticWithDuration {
+	return {
+		...stack,
+		durationInMillis: getStackUsageDurationInMillis(stack.start, stack.end)
+	};
 }
 
 export function sortStackStatisticByMostRecent(stacks: StackStatistic[]): StackStatistic[] {
