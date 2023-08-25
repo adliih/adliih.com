@@ -1,6 +1,6 @@
 import { StackUsageType } from '$lib/enums';
 import type { Project, StackStatistic, WorkExperience } from '$lib/types';
-import { extractStackStatistic, sortStackStatisticByDuration } from '.';
+import { extractStackStatistic, sortAndMergeStackStatisticByDuration } from '.';
 
 describe('extractStackStatistic', () => {
 	it('should return an array of StackStatistic objects', () => {
@@ -102,7 +102,7 @@ describe('sortStackStatisticByDuration', () => {
 			}
 		];
 
-		const sortedStacks = sortStackStatisticByDuration(stacks);
+		const sortedStacks = sortAndMergeStackStatisticByDuration(stacks);
 
 		expect(sortedStacks).toEqual([
 			{

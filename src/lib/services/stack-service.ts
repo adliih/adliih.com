@@ -5,7 +5,11 @@ import type {
 	WorkExperience
 } from '$lib/types';
 import { StackUsageType } from '$lib/enums';
-import { getStackUsageDurationInMillis, parseMonthYearToDateWithFirstDayOfMonth } from '$lib/utils';
+import {
+	getStackUsageDurationInMonths,
+	mergeStackStatisticWithDuration,
+	parseMonthYearToDateWithFirstDayOfMonth
+} from '$lib/utils';
 
 export function extractStackStatistic(
 	experiences: WorkExperience[],
@@ -45,28 +49,27 @@ function projectToStackStatistic(project: Project): StackStatistic[] {
 	}));
 }
 
-export function sortStackStatisticByDuration(
+export function sortAndMergeStackStatisticByDuration(
 	stacks: StackStatistic[]
 ): StackStatisticWithDuration[] {
-	return stacks
-		.slice()
-		.map(toStackStatisticWithDuration)
-		.sort((a, b) => {
-			return b.durationInMillis - a.durationInMillis;
-		});
+	const transformedStatistics = stacks.slice().map(toStackStatisticWithDuration);
+
+	return mergeStackStatisticWithDuration(transformedStatistics).sort((a, b) => {
+		return b.durationInMonths - a.durationInMonths;
+	});
 }
 
 function toStackStatisticWithDuration(stack: StackStatistic): StackStatisticWithDuration {
 	return {
-		...stack,
-		durationInMillis: getStackUsageDurationInMillis(stack.start, stack.end)
+		stack: stack.stack,
+		durationInMonths: getStackUsageDurationInMonths(stack.start, stack.end)
 	};
 }
 
 export function sortStackStatisticByMostRecent(stacks: StackStatistic[]): StackStatistic[] {
 	return stacks.slice().sort((a, b) => {
 		return (
-			getStackUsageDurationInMillis(b.start, b.end) - getStackUsageDurationInMillis(a.start, a.end)
+			getStackUsageDurationInMonths(b.start, b.end) - getStackUsageDurationInMonths(a.start, a.end)
 		);
 	});
 }

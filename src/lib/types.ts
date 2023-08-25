@@ -33,6 +33,7 @@ export interface StackStatistic {
 	end?: Date;
 }
 
-export interface StackStatisticWithDuration extends StackStatistic {
-	durationInMillis: number;
+export interface StackStatisticWithDuration {
+	stack: string;
+	durationInMonths: number;
 }
