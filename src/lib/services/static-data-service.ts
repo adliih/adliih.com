@@ -1,4 +1,4 @@
-import type { Education, Project, WorkExperience } from '$lib/types';
+import type { Education, Project, UserProfile, WorkExperience } from '$lib/types';
 
 export async function getExperiences(): Promise<WorkExperience[]> {
 	return [
@@ -155,4 +155,15 @@ export async function getProjects(): Promise<Project[]> {
 			stacks: ['HTML', 'CSS', 'PHP', 'CodeIgniter', 'JavaScript', 'jQuery', 'MySQL']
 		}
 	];
+}
+
+export async function getUserProfile(): Promise<UserProfile> {
+	return {
+		title: 'Adli Ihsan Hariadi',
+		subtitle: 'Backend Engineer',
+		descriptions: [
+			"I'm a passionate backend engineer with over {yearOfExperience} years of experience in software development. I've been deeply involved in crafting efficient and robust backend solutions for web development.",
+			"In recent years, I've been working with a modern stack that includes TypeScript, Node.js, PHP, and Laravel. I find joy in leveraging the power of these technologies to build scalable and maintainable systems. Whether it's architecting APIs, implementing data processing pipelines, or fine-tuning database performance, I'm dedicated to delivering high-quality solutions that meet the needs of the ever-evolving digital landscape."
+		]
+	};
 }
