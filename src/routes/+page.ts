@@ -1,10 +1,11 @@
-import { getExperiences, getEducations, getProjects } from '$lib/services';
+import { getExperiences, getEducations, getProjects, getUserProfile } from '$lib/services';
 
 export async function load() {
-	const [experiences, educations, projects] = await Promise.all([
+	const [experiences, educations, projects, userProfile] = await Promise.all([
 		getExperiences(),
 		getEducations(),
-		getProjects()
+		getProjects(),
+		getUserProfile()
 	]);
-	return { experiences, educations, projects };
+	return { experiences, educations, projects, userProfile };
 }

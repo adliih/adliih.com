@@ -6,11 +6,11 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-	const { experiences, educations, projects } = data;
+	const { experiences, educations, projects, userProfile } = data;
 </script>
 
 <div class="flex flex-col gap-4">
-	<Introduction />
+	<Introduction {userProfile} />
 	<div class="divider" />
 	<WorkExperience {experiences} />
 	<div class="divider" />

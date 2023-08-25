@@ -37,3 +37,9 @@ export interface StackStatisticWithDuration {
 	stack: string;
 	durationInMonths: number;
 }
+
+export interface UserProfile {
+	title: string;
+	subtitle: string;
+	descriptions: string[];
+}
