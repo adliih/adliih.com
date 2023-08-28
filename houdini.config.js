@@ -2,7 +2,7 @@
 
 /** @type {import('houdini').ConfigFile} */
 const config = {
-	watchSchema: { url: process.env.HYGRAPH_GRAPHQL_URL, interval: 0 },
+	watchSchema: { url: process?.env?.HYGRAPH_GRAPHQL_URL, interval: 0 },
 	plugins: {
 		'houdini-svelte': {}
 	},
