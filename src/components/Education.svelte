@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Education } from '$lib/types';
+	import { formatDate } from '$lib/utils';
 	export let educations: Education[] = [];
 </script>
 
@@ -13,9 +14,9 @@
 					<h3 class="text-xl font-semibold text-secondary">{education.title}</h3>
 					<p class="text-gray-300">{education.institution}</p>
 					<p class="text-gray-300">
-						{education.start} -
+						{formatDate(education.start)} -
 						{#if education.end}
-							{education.end}
+							{formatDate(education.end)}
 						{:else}
 							<span class="badge badge-accent">Current</span>
 						{/if}
@@ -23,7 +24,7 @@
 				</div>
 				<ul class="mt-2 ml-6 list-disc">
 					{#each education.items as highlight}
-						<li>{highlight}</li>
+						<li>{@html highlight.html}</li>
 					{/each}
 				</ul>
 			</div>

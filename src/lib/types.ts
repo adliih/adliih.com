@@ -1,29 +1,36 @@
 import type { StackUsageType } from '$lib/enums';
 
-export interface WorkExperience {
+export interface Stack {
+	name: string;
+}
+
+export interface RichText {
+	html: string;
+}
+
+export interface WithDuration {
+	end: Date | null;
+	start: Date;
+}
+
+export interface WorkExperience extends WithDuration {
 	company: string;
 	jobTitle: string;
-	endWork?: string;
-	startWork: string;
-	stacks: string[];
-	highlights: string[];
+	stacks: Stack[];
+	highlights: RichText[];
 }
 
-export interface Education {
+export interface Education extends WithDuration {
 	title: string;
 	institution: string;
-	start: string;
-	end: string;
-	items: string[];
+	items: RichText[];
 }
 
-export interface Project {
+export interface Project extends WithDuration {
 	title: string;
 	links: { label: string; url: string }[];
-	start: string;
-	end: string;
-	highlights: string[];
-	stacks: string[];
+	highlights: RichText[];
+	stacks: Stack[];
 }
 
 export interface StackStatistic {
@@ -41,5 +48,5 @@ export interface StackStatisticWithDuration {
 export interface UserProfile {
 	title: string;
 	subtitle: string;
-	descriptions: string[];
+	descriptions: RichText[];
 }
