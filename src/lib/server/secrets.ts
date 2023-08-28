@@ -1,8 +1,8 @@
-import { USER_ID, HYGRAPH_GRAPHQL_URL } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 
 export const secrets = {
-	userId: USER_ID,
+	userId: env.USER_ID,
 	hygraph: {
-		url: HYGRAPH_GRAPHQL_URL
+		url: env.HYGRAPH_GRAPHQL_URL
 	}
 };
