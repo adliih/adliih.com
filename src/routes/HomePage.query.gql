@@ -1,0 +1,45 @@
+query HomePage($createdBy: UserWhereInput!) {
+  userProfiles(last: 1, where: {createdBy: $createdBy}) {
+    title
+    subtitle
+    descriptions {
+      html
+    }
+  }
+  workExperiences(orderBy: start_DESC, where: {createdBy: $createdBy}) {
+    company
+    jobTitle
+    start
+    end
+    highlights {
+      html
+    }
+    stacks {
+      name
+    }
+  }
+  projects(orderBy: start_DESC, where: {createdBy: $createdBy}) {
+    title
+    start
+    end
+    highlights {
+      html
+    }
+    stacks {
+      name
+    }
+    links {
+      label
+      url
+    }
+  }
+  educations(orderBy: start_ASC, where: {createdBy: $createdBy}) {
+    title
+    institution
+    start
+    end
+    items {
+      html
+    }
+  }
+}

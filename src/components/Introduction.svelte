@@ -10,7 +10,7 @@
 			<h1 class="text-5xl font-bold text-primary">{userProfile.title}</h1>
 			<h2 class="text-3xl font-thin text-secondary">{userProfile.subtitle}</h2>
 			{#each userProfile.descriptions as description}
-				<p>{description}</p>
+				<p>{@html description.html}</p>
 			{/each}
 			<p />
 		</div>

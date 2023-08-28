@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Project } from '$lib/types';
+	import { formatDate } from '$lib/utils';
 	export let projects: Project[] = [];
 </script>
 
@@ -12,9 +13,9 @@
 				<div class="flex flex-col justify-between lg:items-center lg:flex-row">
 					<h3 class="text-xl font-semibold text-secondary">{project.title}</h3>
 					<p class="text-gray-300">
-						{project.start} -
+						{formatDate(project.start)} -
 						{#if project.end}
-							{project.end}
+							{formatDate(project.end)}
 						{:else}
 							<span class="badge badge-accent">Current</span>
 						{/if}
@@ -30,12 +31,12 @@
 				</ul>
 				<ul class="mt-2 ml-6 list-disc">
 					{#each project.highlights as highlight}
-						<li>{highlight}</li>
+						<li>{@html highlight.html}</li>
 					{/each}
 				</ul>
 				<div>
 					{#each project.stacks as stack}
-						<div class="m-1 badge badge-outline">{stack}</div>
+						<div class="m-1 badge badge-outline">{stack.name}</div>
 					{/each}
 				</div>
 			</div>

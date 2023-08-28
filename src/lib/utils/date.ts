@@ -1,3 +1,5 @@
+import { format } from 'date-fns';
+
 /**
  * Parsing the date in string e.g:
  * - Jun 2023
@@ -9,4 +11,8 @@
  */
 export function parseMonthYearToDateWithFirstDayOfMonth(date: string) {
 	return new Date(date);
+}
+
+export function formatDate(date: Date) {
+	return format(date, 'LLL yyyy');
 }

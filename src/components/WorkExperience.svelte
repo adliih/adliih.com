@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { WorkExperience } from '$lib/types';
+	import { formatDate } from '$lib/utils';
 
 	export let experiences: WorkExperience[] = [];
 </script>
@@ -14,9 +15,9 @@
 					<h3 class="text-xl font-semibold lg:w-1/3 text-secondary">{experience.jobTitle}</h3>
 					<p class="text-gray-300">{experience.company}</p>
 					<p class="text-gray-300">
-						{experience.startWork} -
-						{#if experience.endWork}
-							{experience.endWork}
+						{formatDate(experience.start)} -
+						{#if experience.end}
+							{formatDate(experience.end)}
 						{:else}
 							<span class="badge badge-accent">Current</span>
 						{/if}
@@ -24,12 +25,12 @@
 				</div>
 				<ul class="mt-2 ml-6 list-disc">
 					{#each experience.highlights as highlight}
-						<li>{highlight}</li>
+						<li>{@html highlight.html}</li>
 					{/each}
 				</ul>
 				<div>
 					{#each experience.stacks as stack}
-						<div class="m-1 badge badge-outline">{stack}</div>
+						<div class="m-1 badge badge-outline">{stack.name}</div>
 					{/each}
 				</div>
 			</div>
