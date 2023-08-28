@@ -9,6 +9,8 @@
 	const { experiences, educations, projects, userProfile } = data;
 </script>
 
+<svelte:head><title>'Adli Ihsan Hariadi</title></svelte:head>
+
 <div class="flex flex-col gap-4">
 	<Introduction {userProfile} />
 	<div class="divider" />
