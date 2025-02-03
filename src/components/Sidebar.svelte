@@ -1,21 +1,23 @@
 <script>
 	// @ts-ignore
 	import Icon from 'fa-svelte';
-	import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+	import { faLinkedin, faGithub, faMedium } from '@fortawesome/free-brands-svg-icons';
 	import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
 	import { page } from '$app/stores';
 
 	$: pathname = $page.url.pathname;
 
+  const mediumUrl = 'https://medium.com/@adliih'
+
 	const pages = [
 		{
 			href: '/',
 			title: 'About'
+		},
+		{
+			href: mediumUrl,
+			title: 'Blog'
 		}
-		// {
-		// 	href: '/portfolio',
-		// 	title: 'Portfolio'
-		// }
 	];
 
 	const socials = [
@@ -30,6 +32,10 @@
 		{
 			icon: faEnvelopeOpenText,
 			href: 'mailto:mail@adliih.com'
+		},
+		{
+			icon: faMedium,
+			href: mediumUrl,
 		}
 	];
 </script>
@@ -47,7 +53,7 @@
 				<li>
 					<a
 						href={page.href}
-						class="block py-2 text-center hover:text-accent"
+						class="block py-2 my-1 text-center hover:text-accent"
 						class:active-menu={pathname === page.href}>{page.title}</a
 					>
 				</li>
